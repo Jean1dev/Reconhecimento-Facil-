@@ -10,7 +10,7 @@ classificadorOlhos = cv2.CascadeClassifier(path + file_eye)
 
 camera = cv2.VideoCapture(0)
 amostra = 1
-numAmostras = 25
+numAmostras = 40
 id = input("digite seu idenficador: ")
 largura, altura = 220, 220
 print("batendo as fotos..........")

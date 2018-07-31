@@ -4,13 +4,13 @@ def getName(tnId):
     if tnId == 1:
         return 'jean'
     elif tnId == 2:
-        return 'outro'
+        return 'desconhecido'
 
 path = "/Users/jeanfernandes/Documents/git/Py_facial/source/scripts/"
 file = "haarcascade_frontalface_default.xml"
 detector = cv2.CascadeClassifier(path + file)
 reconhecedor = cv2.face.EigenFaceRecognizer_create()
-reconhecedor.read(path + 'classificadroEigen.yml')
+reconhecedor.read(path + 'classificadorEigen.yml')
 
 largura, altura = 220, 220
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
