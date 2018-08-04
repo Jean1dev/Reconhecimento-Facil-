@@ -4,7 +4,7 @@ import numpy as np
 
 path = "/Users/jeanfernandes/Documents/git/Py_facial/source/scripts/"
 path_completo = path + 'fotos'
-eigenface = cv2.face.EigenFaceRecognizer_create()
+eigenface = cv2.face.EigenFaceRecognizer_create(num_components=10, threshold=2)
 fisherface = cv2.face.FisherFaceRecognizer_create()
 lbph = cv2.face.LBPHFaceRecognizer_create()
 

@@ -9,8 +9,8 @@ def getName(tnId):
 path = "/Users/jeanfernandes/Documents/git/Py_facial/source/scripts/"
 file = "haarcascade_frontalface_default.xml"
 detector = cv2.CascadeClassifier(path + file)
-reconhecedor = cv2.face.EigenFaceRecognizer_create()
-reconhecedor.read(path + 'classificadorEigen.yml')
+reconhecedor = cv2.face.FisherFaceRecognizer_create()
+reconhecedor.read(path + 'classificadorFisher.yml')
 
 largura, altura = 220, 220
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
