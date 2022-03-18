@@ -29,7 +29,7 @@ import java.util.Map;
 public class Main {
 
   public static void main(String[] args) throws Exception {
-    args = Arrays.asList("localhost:9000", "Screenshot_15.jpg").toArray(new String[1]);
+    args = Arrays.asList("localhost:9000", "img.jpg").toArray(new String[1]);
     if (args.length != 2){
       System.out.println("Invalid args");
       System.out.println("Usage: <host:port> <image>");

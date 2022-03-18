@@ -13,23 +13,28 @@ public class ChecarImagem {
 
         while (true) {
             if (file.exists()) {
-                System.out.println("arquivo existe");
+               try {
+                   System.out.println("arquivo existe");
 
-                System.out.println("Image = " + file.getAbsolutePath());
-                InputStream jpegStream = new FileInputStream(file.getAbsolutePath());
-                List<Map.Entry<String, Double>> list = recogniser
-                        .recognise(jpegStream);
+                   System.out.println("Image = " + file.getAbsolutePath());
+                   InputStream jpegStream = new FileInputStream(file.getAbsolutePath());
+                   List<Map.Entry<String, Double>> list = recogniser
+                           .recognise(jpegStream);
 
-                Writer arquivo = new BufferedWriter(new FileWriter("output.txt", true));
-                arquivo.append(String.valueOf(list));
-                arquivo.append("\n");
-                arquivo.close();
-                System.out.println(list);
-                jpegStream.close();
+                   Writer arquivo = new BufferedWriter(new FileWriter("output.txt", true));
+                   arquivo.append(String.valueOf(list));
+                   arquivo.append("\n");
+                   arquivo.close();
+                   System.out.println(list);
+                   jpegStream.close();
 //                System.exit(0);
-                if (!file.delete()) {
-                    Files.delete(file.toPath());
-                }
+                   if (!file.delete()) {
+                       Files.delete(file.toPath());
+                   }
+               } catch (Exception e) {
+                   e.printStackTrace();
+                   Thread.sleep(5000);
+               }
             }
         }
     }
